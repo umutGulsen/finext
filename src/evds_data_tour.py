@@ -8,7 +8,7 @@ class EvdsExplorer:
     def get_main_categories(self):
         mcdf = self.evds.main_categories
         mcdf = mcdf.sort_values("CATEGORY_ID")
-        message = "Input an ID to look into a category ( e:exit)\n"
+        message = "Input an ID to look into a category ( e:exit )\n"
         print("### TCMB EVDS MAIN CATEGORIES ###")
         for row in mcdf.iterrows():
             print(f"MCID: {row[1].CATEGORY_ID} NAME: {row[1].TOPIC_TITLE_TR}")
@@ -28,8 +28,8 @@ class EvdsExplorer:
 
     def get_sub_categories(self, mcid, mc_name):
         scdf = self.evds.get_sub_categories(mcid)
-        message = "Input an ID to look into a sub-category (b: back - e:exit)\n"
-        print(f"### TCMB EVDS SUB CATEGORIES OF {mc_name}###")
+        message = "Input an ID to look into a sub-category (b: back - e:exit )\n"
+        print(f"\n\n### TCMB EVDS SUB CATEGORIES OF {mc_name}###")
         for i, row in enumerate(scdf.iterrows()):
             print(f"SCID: {i} NAME: {row[1].DATAGROUP_NAME}")
         next = input(message)
@@ -50,8 +50,8 @@ class EvdsExplorer:
 
     def get_series(self, group_code, group_name, mc_id, mc_name):
         sdf = self.evds.get_series(group_code)
-        message = "(b: back - e:exit)\n"
-        print(f"### TCMB EVDS SERIES OF {group_name}###")
+        message = "(b: back - e:exit )\n"
+        print(f"\n\n### TCMB EVDS SERIES OF {group_name}###")
         for i, row in enumerate(sdf.iterrows()):
             print(f"SERIE CODE : {row[1].SERIE_CODE} --- NAME: {row[1].SERIE_NAME} --- START DATE: {row[1].START_DATE}")
 
