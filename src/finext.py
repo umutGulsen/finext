@@ -1,8 +1,8 @@
-import evds
+import get_evds_data
 
 
 def main():
-    evds.test()
+    get_evds_data.test()
 
 
 if __name__ == '__main__':
