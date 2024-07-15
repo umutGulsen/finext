@@ -10,7 +10,12 @@ def test():
 
     print(evds_api_key)
     evds = evdsAPI(evds_api_key)
-    data = evds.get_data(['TP.DK.USD.A.YTL','TP.DK.EUR.A.YTL'], startdate="01-01-2019", enddate="01-01-2020")
+    print(evds.main_categories)
+    subs = evds.get_sub_categories(2)
+    print(subs.iloc[:,1])
+    series = evds.get_series("bie_dkdovytl")
+    print(series)
+    data = evds.get_data(['TP.DK.USD.A.YTL', 'TP.DK.EUR.A.YTL'], startdate="01-01-2024")
     print(data)
 
 
