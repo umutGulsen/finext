@@ -1,11 +1,15 @@
+import json
 import evds_reader
 import evds_data_tour
 
 def main():
+    with open('config.json', 'r') as file:
+        config = json.load(file)
+
     while True:
         mode = input("Choose mode (Data Tour: t | Export Data: e): ")
         if mode == "t":
-            tour = evds_data_tour.EvdsExplorer()
+            tour = evds_data_tour.EvdsExplorer(config)
             tour.get_main_categories()
             break
         elif mode == "e":
