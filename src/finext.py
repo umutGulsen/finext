@@ -2,6 +2,7 @@ import json
 import evds_reader
 import evds_data_tour
 
+
 def main():
     with open('config.json', 'r') as file:
         config = json.load(file)
@@ -18,6 +19,7 @@ def main():
             break
         else:
             print("Please choose a valid mode")
+
 
 if __name__ == '__main__':
     main()

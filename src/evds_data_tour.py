@@ -1,5 +1,6 @@
 import os
-from evds import evdsAPI
+from evds_source import evdsAPI
+
 
 class EvdsExplorer:
     def __init__(self, config):
